@@ -1,12 +1,14 @@
-# React + Vite
+# CSE331 Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Notes
+- Node is required to run this so install node before trying to run
+- Run on Chrome as Safari may apply some styles weird and not as the intended product
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## How to compile
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Open a new terminal
+2. Type the following command `npm i`. This will install all of the neccesary packages in order to run the code
+3. Once all the packages are downloaded, then type in the following command `npm run dev`. This will allow you to view the website via your localhost. The port will be included in the same terminal that you ran that command
+4. In order to end the program, click on the same terminal running the previous command and press CTRL + C (Specifically control for MacOS)

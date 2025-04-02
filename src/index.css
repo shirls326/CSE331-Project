@@ -21,3 +21,19 @@ body{
 
 
 }
+
+
+
+/* Global styles */
+h1,h2,h3{
+  font-family: "casablanca-urw", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+
+}
+p{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-optical-sizing: auto;
+}

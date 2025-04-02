@@ -5,6 +5,7 @@ import './App.css'
 // game components
 import Tile from '../gameComponents/Tile.jsx'
 import NavBar from '../components/navBar.jsx'
+import Instructions from '../components/CollapseableMenu/Instructions.jsx'
 
 // Tile data: Every 4 tiles are a group, and one in each group is an outlier
 const tilesData = [
@@ -66,6 +67,8 @@ function App() {
           ))}
         </div>
         <h2>Lives: {lives}</h2>
+        <Instructions />
+
       </div>
     </div>
    </div>
