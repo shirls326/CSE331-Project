@@ -22,16 +22,14 @@
   border: 5px solid black;
   box-shadow: 0px 7px 0px 0px rgba(15, 75, 68, 0.66);
 
-
-
-
-  .Screen{
+  .Screen {
     background-color: var(--primaryWhite);
     border-radius: inherit;
     overflow: hidden;
     min-height: 50%;
     max-height: 80%;
-    display: grid;
+    display: grid
+;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     /* gap: 10rem; */
@@ -39,16 +37,13 @@
     align-items: center;
     gap: 0;
     /* height: 100%; */
-    min-height: fit-content;
+    /* min-height: 55%; */
     width: 90%;
     min-width: fit-content;
-    height: 70%;
-    max-height: 80%;
+    /* height: 80%; */
+    /* max-height: 80%; */
     margin: 1.5rem 0;
     border: 1px solid black;
-
-
-                             
-
+    padding: 1.5rem 0;
   }
 }
