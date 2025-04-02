@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './Tile.css'
-export default function Tile({ tileText, setColor }) {
+export default function Tile({ tileText, setColor,onClick }) {
 
     // setTile is a function that takes a tile and sets it to the current tile
   
@@ -14,7 +14,7 @@ export default function Tile({ tileText, setColor }) {
 
 
   return (
-    <div className={`tile ${setColor}`}>
+    <div className={`tile ${setColor}` }onClick={onClick}>
         <p>{tileText}</p>
     </div>
   )

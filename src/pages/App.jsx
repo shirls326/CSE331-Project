@@ -4,44 +4,70 @@ import './App.css'
 
 // game components
 import Tile from '../gameComponents/Tile.jsx'
-
-
 import NavBar from '../components/navBar.jsx'
 
+// Tile data: Every 4 tiles are a group, and one in each group is an outlier
+const tilesData = [
+  { text: "Cobalt", color: "yellow", isOutlier: false },
+  { text: "Azure", color: "yellow", isOutlier: false },
+  { text: "Crimson", color: "yellow", isOutlier: true },
+  { text: "Cyan", color: "yellow", isOutlier: false },
+
+  { text: "Penne", color: "cyan", isOutlier: false },
+  { text: "Rigatoni", color: "cyan", isOutlier: false },
+  { text: "Spagetti", color: "cyan", isOutlier: true },
+  { text: "Baugette", color: "cyan", isOutlier: false },
+
+  { text: "Peru", color: "pink", isOutlier: false },
+  { text: "Spain", color: "pink", isOutlier: true },
+  { text: "Brazil", color: "pink", isOutlier: false },
+  { text: "Ecuador", color: "pink", isOutlier: false },
+
+  { text: "Engine", color: "purple", isOutlier: false },
+  { text: "Tire", color: "purple", isOutlier: false },
+  { text: "Brakes", color: "purple", isOutlier: false },
+  { text: "Propeller", color: "purple", isOutlier: true }
+]
+
 function App() {
+  const [lives, setLives] = useState(3)
+
+  // Handle tile selection
+  const handleTileClick = (isOutlier) => {
+    if (!isOutlier) {
+      setLives(lives - 1)
+      if (lives - 1 === 0) {
+        alert("Game Over! Restarting...");
+        setLives(3) // Reset lives on game over
+      }
+    }
+  }
+
+  // Handle Winning
+  const handleWin = () => {
+    alert("You Win!");
+    setLives(3) // Reset lives on win
+  }
 
   return (
    <div className='page'>
     <NavBar />
     <div className='gamePage'>
       <div className='gameContainer'>
+       
         <div className='Screen'>
-          <Tile tileText="Cobalt" setColor={'yellow'}/>
-          <Tile tileText="Azure" setColor={'yellow'}/>
-          <Tile tileText="Crimson" setColor={'yellow'}/>
-          <Tile tileText="Cyan" setColor={'yellow'}/>
-          <Tile tileText="Penne" setColor={'cyan'}/>
-          <Tile tileText="Rigatoni" setColor={'cyan'}/>
-          <Tile tileText="Spagetti" setColor={'cyan'}/>
-          <Tile tileText="Baugette" setColor={'cyan'}/>
-          <Tile tileText="Peru" setColor={'pink'}/>
-          <Tile tileText="Spain" setColor={'pink'}/>
-          <Tile tileText="Brazil" setColor={'pink'}/>
-          <Tile tileText="Ecuador" setColor={'pink'}/>
-          <Tile tileText="Engine" setColor={'purple'} />
-          <Tile tileText="Tire" setColor={'purple'} />
-          <Tile tileText="Brakes" setColor={'purple'} />
-          <Tile tileText="Propeller" setColor={'purple'} />          
+          {tilesData.map((tile, index) => (
+            <Tile 
+              key={index} 
+              tileText={tile.text} 
+              setColor={tile.color} 
+              onClick={() => handleTileClick(tile.isOutlier)}
+            />
+          ))}
         </div>
-        
+        <h2>Lives: {lives}</h2>
       </div>
-
-
-
     </div>
-
-
-
    </div>
   )
 }
