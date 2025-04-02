@@ -1,0 +1,46 @@
+.tile{
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73%; /* Adjust based on container */
+    aspect-ratio: 1 / 1; /* Ensures perfect square */
+    border-radius: 10%;
+    border: 2px solid black;
+
+    p{
+        font-size: 1.25rem;
+        margin: 0;
+        padding: 0;
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+
+    }
+    
+}
+
+.yellow{
+    background-color: var(--gameYellow);
+    color: var(--gamePink);
+
+
+}
+
+.purple{
+    background-color: var(--gamePurple);
+    color: var(--gameYellow);
+}
+
+.cyan{
+    background-color: var(--gameCyan);
+    color: var(--gameYellow);
+
+}
+
+.pink{
+    background-color: var(--gamePink);
+    color: var(--gameYellow);
+
+}
