@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../../index.css'
 import '../App.css'
-// import './TileTheif.css'
+import './TileTheif.css'
 
 
 // game components
