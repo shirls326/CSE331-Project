@@ -4,7 +4,10 @@ import './navBar.css'
 export default function navBar() {
   return (
     <div className='navBar'>
-        <p>woah</p>
+      <div className='gameTitleLogo'>
+        <h3>Theme Thief</h3>
+      </div>
+
     </div>
   )
 }
