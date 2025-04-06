@@ -1,6 +1,27 @@
 .instructionsContainer {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 80%;
   }
+
+  .instructionsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .chevron {
+    transition: transform 0.3s ease;
+  }
+  
+  .chevron.open {
+    transform: rotate(180deg);
+  }  
   
   .collapsable {
     background-color: #3498db;
@@ -18,11 +39,6 @@
   }
   
   .instructionsContent {
-    background: #f4f4f4;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;
   }
   
