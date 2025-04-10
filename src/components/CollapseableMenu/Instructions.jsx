@@ -6,8 +6,8 @@ export default function Instructions() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='instructionsContainer' onClick={() => setIsOpen(!isOpen)}>
-      <div className="instructionsHeader">
+    <div className='instructionsContainer'>
+      <div className="instructionsHeader" onClick={() => setIsOpen(!isOpen)}>
         <h2>How to play/Instructions</h2>
         <FaChevronDown className={`chevron ${isOpen ? 'open' : ''}`} />
       </div>
