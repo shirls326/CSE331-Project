@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import '../index.css'
-import './App.css'
+import '../../index.css'
+import '../App.css'
+import './TileTheif.css'
 
 
 // game components
-import Tile from '../gameComponents/Tile.jsx'
-import NavBar from '../components/navBar.jsx'
-import Instructions from '../components/CollapseableMenu/Instructions.jsx'
-import WinningPage from './WinningPage.jsx'
-import LandingPage from './LandingPage.jsx'
+import Tile from '../../gameComponents/Tile.jsx'
+import NavBar from '../../components/navBar.jsx'
 
+import Instructions from '../../components/CollapseableMenu/Instructions.jsx'
 
 // Tile data: Every 4 tiles are a group, and one in each group is an outlier
 const tilesData = [
@@ -34,7 +33,7 @@ const tilesData = [
   { text: "Propeller", color: "purple", isOutlier: true }
 ]
 
-function App() {
+function TileTheif() {
   const [lives, setLives] = useState(3)
 
   // Handle tile selection
@@ -55,33 +54,28 @@ function App() {
   }
 
   return (
-    <div>
+   <div className='page'>
+    <NavBar />
+    <div className='gamePage'>
+      <div className='gameContainer'>
+       
+        <div className='Screen'>
+          {tilesData.map((tile, index) => (
+            <Tile 
+              key={index} 
+              tileText={tile.text} 
+              setColor={tile.color} 
+              onClick={() => handleTileClick(tile.isOutlier)}
+            />
+          ))}
+        </div>
+        <h2>Lives: {lives}</h2>
+        <Instructions />
 
-      <LandingPage/>
-      {/* <div className='page'>
-        <NavBar />
-        <div className='gamePage'>
-          <div className='gameContainer'>
-           
-            <div className='Screen'>
-              {tilesData.map((tile, index) => (
-                <Tile 
-                  key={index} 
-                  tileText={tile.text} 
-                  setColor={tile.color} 
-                  onClick={() => handleTileClick(tile.isOutlier)}
-                />
-              ))}
-            </div>
-            <h2>Lives: {lives}</h2>
-            <Instructions />
-            <WinningPage/> */}
-
-          {/* </div> */}
-        {/* </div> */}
-      {/* </div> */}
+      </div>
     </div>
+   </div>
   )
 }
 
-export default App
+export default TileTheif
