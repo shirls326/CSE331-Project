@@ -2,10 +2,14 @@ import { useState } from 'react'
 import '../index.css'
 import './App.css'
 
+
 // game components
 import Tile from '../gameComponents/Tile.jsx'
 import NavBar from '../components/navBar.jsx'
 import Instructions from '../components/CollapseableMenu/Instructions.jsx'
+import WinningPage from './WinningPage.jsx'
+import LandingPage from './LandingPage.jsx'
+
 
 // Tile data: Every 4 tiles are a group, and one in each group is an outlier
 const tilesData = [
@@ -51,27 +55,32 @@ function App() {
   }
 
   return (
-   <div className='page'>
-    <NavBar />
-    <div className='gamePage'>
-      <div className='gameContainer'>
-       
-        <div className='Screen'>
-          {tilesData.map((tile, index) => (
-            <Tile 
-              key={index} 
-              tileText={tile.text} 
-              setColor={tile.color} 
-              onClick={() => handleTileClick(tile.isOutlier)}
-            />
-          ))}
-        </div>
-        <h2>Lives: {lives}</h2>
-        <Instructions />
+    <div>
 
-      </div>
+      <LandingPage/>
+      {/* <div className='page'>
+        <NavBar />
+        <div className='gamePage'>
+          <div className='gameContainer'>
+           
+            <div className='Screen'>
+              {tilesData.map((tile, index) => (
+                <Tile 
+                  key={index} 
+                  tileText={tile.text} 
+                  setColor={tile.color} 
+                  onClick={() => handleTileClick(tile.isOutlier)}
+                />
+              ))}
+            </div>
+            <h2>Lives: {lives}</h2>
+            <Instructions />
+            <WinningPage/> */}
+
+          {/* </div> */}
+        {/* </div> */}
+      {/* </div> */}
     </div>
-   </div>
   )
 }
 
