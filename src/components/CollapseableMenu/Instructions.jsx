@@ -8,18 +8,18 @@ export default function Instructions() {
   return (
     <div className='instructionsContainer'>
       <div className="instructionsHeader" onClick={() => setIsOpen(!isOpen)}>
-        <h2>How to play/Instructions</h2>
+        <h2 style={{ margin: 0 }}>How to play/Instructions</h2>
         <FaChevronDown className={`chevron ${isOpen ? 'open' : ''}`} />
       </div>
       {isOpen && (
-        <div className='instructionsContent'>
+        <p className='instructionsContent'>
           <hr />
-          <p>1. Click on the tiles to select them.</p>
-          <p>2. Avoid selecting the outlier tiles.</p>
-          <p>3. You have 3 lives. Lose a life for each incorrect selection.</p>
-          <p>4. Win by selecting all non-outlier tiles.</p>
-          <p>5. Good luck!</p>
-        </div>
+          1. Click on the tiles to select them.<br/>
+          2. Avoid selecting the outlier tiles.<br/>
+          3. You have 3 lives. Lose a life for each incorrect selection.<br/>
+          4. Win by selecting all non-outlier tiles.<br/>
+          5. Good luck!
+        </p>
       )}
     </div>
   )

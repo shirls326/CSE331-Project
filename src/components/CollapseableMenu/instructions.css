@@ -5,7 +5,7 @@
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 80%;
+    width: -webkit-fill-available;
   }
 
   .instructionsHeader {
@@ -40,6 +40,8 @@
   
   .instructionsContent {
     animation: fadeIn 0.3s ease-in-out;
+    margin: 0;
+    line-height: 1.8;
   }
   
   /* Smooth fade-in animation */
