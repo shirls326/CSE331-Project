@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../index.css'
 import '../App.css'
 import './TileTheif.css'
@@ -32,6 +33,8 @@ const tilesData = [
 ]
 
 function TileTheif() {
+  const navigate = useNavigate();
+
   const [lives, setLives] = useState(3)
   const [selectedTiles, setSelectedTiles] = useState([])
   const [disabledTiles, setDisabledTiles] = useState([])
@@ -46,7 +49,7 @@ function TileTheif() {
   // Lose a life; if no lives remain, alert game over and reset everything.
   const loseLife = () => {
     if (lives <= 1) {
-      alert("Game Over! Restarting...")
+      navigate("/lose") 
       resetGame()
     } else {
       setLives(lives - 1)
@@ -104,7 +107,8 @@ function TileTheif() {
         .every(item => newDisabledTiles.includes(item.idx))
 
       if (allNonOutlierDisabled) {
-        alert("You Win!")
+        navigate("/win")
+
         resetGame()
       }
     } else {
@@ -114,7 +118,7 @@ function TileTheif() {
   }
 
   const handleWin = () => {
-    alert("You Win!")
+    navigate("/win")
     resetGame()
   }
 

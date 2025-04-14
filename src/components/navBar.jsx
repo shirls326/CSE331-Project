@@ -1,13 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './navBar.css'
 import settings from '../assets/settingsGear.svg'
+import LandingPage from "../pages/Landing/LandingPage"
 
-export default function navBar() {
+const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleAllGamesClick = () => {
+    navigate('/');  // Navigate to the root/landing page
+  };
+
   return (
     <div className='navBar'>
       <div className='left'>
-        <button className='allGamesButton'>All Games</button>
-
+        <button className='allGamesButton' onClick={handleAllGamesClick}>
+          All Games
+        </button>
       </div>
       <div className='middle'>
       <div className='gameTitleLogo'>
@@ -27,3 +36,5 @@ export default function navBar() {
     </div>
   )
 }
+
+export default NavBar
