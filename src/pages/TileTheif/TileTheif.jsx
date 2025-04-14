@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../index.css'
 import '../App.css'
 import './TileTheif.css'
@@ -35,22 +36,53 @@ const tilesData = [
 
 function TileTheif() {
   const [lives, setLives] = useState(3)
+  const [selectedTiles, setSelectedTiles] = useState([])
+  const [submitted, setSubmitted] = useState(false)
+  const navigate = useNavigate()
 
   // Handle tile selection
-  const handleTileClick = (isOutlier) => {
-    if (!isOutlier) {
-      setLives(lives - 1)
-      if (lives - 1 === 0) {
-        alert("Game Over! Restarting...");
-        setLives(3) // Reset lives on game over
-      }
+  const handleTileClick = (index, isOutlier) => {
+    if (submitted) return; // Don't allow selection after submission
+    
+    // Check if tile is already selected
+    if (selectedTiles.includes(index)) {
+      // Deselect the tile
+      setSelectedTiles(selectedTiles.filter(i => i !== index));
+    } else if (selectedTiles.length < 4) {
+      // Select the tile if we haven't reached 4 selections
+      setSelectedTiles([...selectedTiles, index]);
     }
   }
 
-  // Handle Winning
-  const handleWin = () => {
-    alert("You Win!");
-    setLives(3) // Reset lives on win
+  // Handle submission
+  const handleSubmit = () => {
+    if (selectedTiles.length !== 4) {
+      alert("Please select exactly 4 tiles before submitting!");
+      return;
+    }
+    
+    setSubmitted(true);
+    
+    // Check if all selected tiles are outliers
+    const allCorrect = selectedTiles.every(index => tilesData[index].isOutlier);
+    
+    if (allCorrect) {
+      // Navigate to winning page
+      setTimeout(() => {
+        navigate('/win');
+      }, 1000);
+    } else {
+      // Navigate to losing page
+      setTimeout(() => {
+        navigate('/lose');
+      }, 1000);
+    }
+  }
+
+  // Reset the game
+  const resetGame = () => {
+    setSelectedTiles([]);
+    setSubmitted(false);
   }
 
   return (
@@ -65,13 +97,35 @@ function TileTheif() {
               key={index} 
               tileText={tile.text} 
               setColor={tile.color} 
-              onClick={() => handleTileClick(tile.isOutlier)}
+              isSelected={selectedTiles.includes(index)}
+              onClick={() => handleTileClick(index, tile.isOutlier)}
             />
           ))}
         </div>
-        <h2>Lives: {lives}</h2>
+        
+        <div className="game-controls">
+          <h2>Selected: {selectedTiles.length}/4</h2>
+          <h2>Lives: {lives}</h2>
+          
+          <div className="button-container">
+            <button 
+              className="submit-button" 
+              onClick={handleSubmit}
+              disabled={selectedTiles.length !== 4 || submitted}
+            >
+              Submit
+            </button>
+            <button 
+              className="reset-button" 
+              onClick={resetGame}
+              disabled={!submitted}
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        
         <Instructions />
-
       </div>
     </div>
    </div>

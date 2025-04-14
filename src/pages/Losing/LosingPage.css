@@ -1,0 +1,102 @@
+.gameContainer .resultScreen {
+  border-radius: 24px;
+  overflow: hidden;
+  width: 90%;
+  min-width: fit-content;
+  margin: 1.5rem 0;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+}
+
+.gameContainer .resultTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.gameContainer .resultHeading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2.5rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.gameContainer .resultContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 1rem 0 2rem 0;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gameContainer .stats-icon {
+  margin-bottom: 1rem;
+}
+
+.gameContainer .solve-time {
+  text-align: center;
+}
+
+.gameContainer .solve-time h3 {
+  color: var(--gamePink);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.gameContainer .solve-time p {
+  color: var(--gamePink);
+  opacity: 0.7;
+  font-size: 1.2rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.gameContainer .try-again-button {
+  background-color: white;
+  color: var(--gamePink);
+  padding: 0.75rem 2rem;
+  border-radius: 100px;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gameContainer .try-again-button .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.gameContainer .try-again-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gameContainer .try-again-button:hover .arrow {
+  transform: translateX(4px);
+}
+
+.gameContainer .try-again-button:active {
+  transform: translateY(0);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+} 

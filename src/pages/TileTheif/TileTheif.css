@@ -46,4 +46,63 @@
       border: 1px solid black;
       padding: 1.5rem 0;
     }
+    
+    .game-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      margin-top: 1rem;
+      
+      h2 {
+        margin: 0.5rem 0;
+        font-family: "Quicksand", sans-serif;
+        color: var(--gameYellow);
+        font-weight: 600;
+      }
+      
+      .button-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        
+        button {
+          padding: 0.75rem 1.5rem;
+          border-radius: 20px;
+          border: none;
+          font-family: "Quicksand", sans-serif;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
+          
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+          }
+        }
+        
+        .submit-button {
+          background-color: var(--gameYellow);
+          color: var(--gamePink);
+          
+          &:hover:not(:disabled) {
+            background-color: #e6c200;
+            transform: translateY(-2px);
+          }
+        }
+        
+        .reset-button {
+          background-color: var(--gamePink);
+          color: var(--gameYellow);
+          
+          &:hover:not(:disabled) {
+            background-color: #d64d7d;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
   }

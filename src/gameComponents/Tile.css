@@ -8,6 +8,8 @@
     border-radius: 10%;
     border: 2px solid black;
     margin: 10%;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     p{
         font-size: 1.25rem;
@@ -20,6 +22,12 @@
 
     }
     
+}
+
+.tile.selected {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid gold;
 }
 
 .yellow{

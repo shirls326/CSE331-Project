@@ -1,86 +1,29 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import '../index.css'
 import './App.css'
 
-
-// game components
-import Tile from '../gameComponents/Tile.jsx'
-import NavBar from '../components/navBar.jsx'
-import Instructions from '../components/CollapseableMenu/Instructions.jsx'
-import WinningPage from './WinningPage.jsx'
-import LandingPage from './LandingPage.jsx'
-
-
-// Tile data: Every 4 tiles are a group, and one in each group is an outlier
-const tilesData = [
-  { text: "Cobalt", color: "yellow", isOutlier: false },
-  { text: "Azure", color: "yellow", isOutlier: false },
-  { text: "Crimson", color: "yellow", isOutlier: true },
-  { text: "Cyan", color: "yellow", isOutlier: false },
-
-  { text: "Penne", color: "cyan", isOutlier: false },
-  { text: "Rigatoni", color: "cyan", isOutlier: false },
-  { text: "Spagetti", color: "cyan", isOutlier: true },
-  { text: "Baugette", color: "cyan", isOutlier: false },
-
-  { text: "Peru", color: "pink", isOutlier: false },
-  { text: "Spain", color: "pink", isOutlier: true },
-  { text: "Brazil", color: "pink", isOutlier: false },
-  { text: "Ecuador", color: "pink", isOutlier: false },
-
-  { text: "Engine", color: "purple", isOutlier: false },
-  { text: "Tire", color: "purple", isOutlier: false },
-  { text: "Brakes", color: "purple", isOutlier: false },
-  { text: "Propeller", color: "purple", isOutlier: true }
-]
+// Import components
+import LandingPage from './Landing/LandingPage.jsx'
+import GamePage from './GamePage.jsx'
+import TileTheif from './TileTheif/TileTheif.jsx'
+import WinningPage from './Winning/WinningPage.jsx'
+import LosingPage from './Losing/LosingPage.jsx'
 
 function App() {
-  const [lives, setLives] = useState(3)
-
-  // Handle tile selection
-  const handleTileClick = (isOutlier) => {
-    if (!isOutlier) {
-      setLives(lives - 1)
-      if (lives - 1 === 0) {
-        alert("Game Over! Restarting...");
-        setLives(3) // Reset lives on game over
-      }
-    }
-  }
-
-  // Handle Winning
-  const handleWin = () => {
-    alert("You Win!");
-    setLives(3) // Reset lives on win
-  }
-
   return (
-    <div>
-
-      <LandingPage/>
-      {/* <div className='page'>
-        <NavBar />
-        <div className='gamePage'>
-          <div className='gameContainer'>
-           
-            <div className='Screen'>
-              {tilesData.map((tile, index) => (
-                <Tile 
-                  key={index} 
-                  tileText={tile.text} 
-                  setColor={tile.color} 
-                  onClick={() => handleTileClick(tile.isOutlier)}
-                />
-              ))}
-            </div>
-            <h2>Lives: {lives}</h2>
-            <Instructions />
-            <WinningPage/> */}
-
-          {/* </div> */}
-        {/* </div> */}
-      {/* </div> */}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/game" element={<GamePage />} />
+          <Route path="/theme-thief" element={<TileTheif />} />
+          <Route path="/win" element={<WinningPage />} />
+          <Route path="/lose" element={<LosingPage />} />
+          {/* Redirect any unknown routes to the landing page */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
