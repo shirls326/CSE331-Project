@@ -120,28 +120,29 @@ function TileTheif() {
 
   return (
     <div className='page'>
-      <NavBar />
-      <div className='gamePage'>
-        <div className='gameContainer'>
-          <div className='Screen'>
-            {tilesData.map((tile, index) => (
-              <Tile
-                key={index}
-                tileText={tile.text}
-                setColor={tile.color}
-                onClick={() => handleTileClick(tile.isOutlier, index)}
-                isSelected={selectedTiles.includes(index)}
-                isDisabled={disabledTiles.includes(index)}
-              />
-            ))}
-          </div>
-          {/* Submit button above the lives display */}
-          <button onClick={handleSubmit} className="allGamesButton">Submit</button>
-          <h2>Lives: {lives}</h2>
-          <Instructions />
+    <NavBar />
+    <div className='gamePage'>
+      <div className='gameContainer'>
+        <div className='Screen'>
+          {tilesData.map((tile, index) => (
+            <Tile
+              key={index}
+              tileText={tile.text}
+              setColor={tile.color}
+              onClick={() => handleTileClick(tile.isOutlier, index)}
+              isSelected={selectedTiles.includes(index)}
+              isDisabled={disabledTiles.includes(index)}
+            />
+          ))}
         </div>
+        <div className="button-lives-container">
+          <button onClick={handleSubmit} className="allGamesButton">Submit</button>
+          <h2 style={{ margin: 0 }}>Lives: {lives}</h2>
+        </div>
+        <Instructions />
       </div>
     </div>
+  </div>
   )
 }
 

@@ -2,12 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 73%; /* Adjust based on container */
-    aspect-ratio: 1 / 1; /* Ensures perfect square */
+    width: 90px;
+    aspect-ratio: 1 / 1;
     border-radius: 10%;
     border: 2px solid black;
-    margin: 10%;
-    cursor: pointer; /* Cursor changes to pointer on hover */
+    cursor: pointer;
   }
   
   .tile p {
