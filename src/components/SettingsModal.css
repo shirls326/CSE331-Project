@@ -1,0 +1,109 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(3, 3, 1, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--primaryWhite);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(3, 3, 1, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content h2 {
+  margin: 0 0 1.5rem 0;
+  color: var(--primaryBlack);
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.setting-group {
+  margin-bottom: 1rem;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primaryBlack);
+  font-weight: 500;
+}
+
+.setting-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--gameCyan);
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--primaryBlack);
+  background-color: var(--primaryWhite);
+}
+
+.setting-group select:focus {
+  outline: none;
+  border-color: var(--gamePurple);
+  box-shadow: 0 0 0 2px rgba(211, 145, 255, 0.25);
+}
+
+.close-button {
+  background-color: var(--gameCyan);
+  color: var(--primaryBlack);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: var(--gamePurple);
+  color: var(--primaryWhite);
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .modal-content {
+  background-color: var(--darkBackground);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .modal-content h2 {
+  color: var(--darkText);
+}
+
+[data-theme="dark"] .setting-group label {
+  color: var(--darkText);
+}
+
+[data-theme="dark"] .setting-group select {
+  background-color: var(--darkBackground);
+  border-color: var(--darkCyan);
+  color: var(--darkText);
+}
+
+[data-theme="dark"] .setting-group select:focus {
+  border-color: var(--darkPurple);
+  box-shadow: 0 0 0 2px rgba(179, 102, 255, 0.25);
+}
+
+[data-theme="dark"] .close-button {
+  background-color: var(--darkCyan);
+  color: var(--darkText);
+}
+
+[data-theme="dark"] .close-button:hover {
+  background-color: var(--darkPurple);
+  color: var(--darkText);
+} 

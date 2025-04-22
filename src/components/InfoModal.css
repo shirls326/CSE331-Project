@@ -1,0 +1,61 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(3, 3, 1, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--primaryWhite);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(3, 3, 1, 0.1);
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: var(--primaryBlack);
+}
+
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.modal-body p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--primaryBlack);
+}
+
+.modal-body ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.modal-body li {
+  margin-bottom: 0.5rem;
+  color: var(--primaryBlack);
+}
+
+.close-button {
+  background-color: var(--gameCyan);
+  color: var(--primaryBlack);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: var(--gamePurple);
+  color: var(--primaryWhite);
+} 

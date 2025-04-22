@@ -1,0 +1,22 @@
+.stopwatch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color, #222);
+    padding: 0.5rem 1rem;
+    background-color: var(--surface-color, #f5f5f5);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+  }
+  
+  .stopwatch-icon {
+    font-size: 1.5rem;
+  }
+  
+  .stopwatch-time {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
